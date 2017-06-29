@@ -12,8 +12,9 @@ public class HttpConstants {
 
 
    //http://47.93.237.249:8080/customApp_server/index.jsp
-   private static final String ROOT_URL = "http://47.93.237.249:8080";
-   public static String MINA_IP = "47.93.237.249";
+    private static final String ROOT_URL = "http://47.93.237.249:8080";
+    public static String MINA_IP = "http://47.93.237.249:8080/customApp_server";
+    public static String MINA_IP2 = "192.168.1.122";
     /**
      * 请求本地产品列表
      */

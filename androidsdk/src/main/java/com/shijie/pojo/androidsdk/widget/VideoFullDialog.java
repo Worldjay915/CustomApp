@@ -1,5 +1,6 @@
 package com.shijie.pojo.androidsdk.widget;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -46,7 +48,7 @@ public class VideoFullDialog extends Dialog implements CustomVideoView.ADVideoPl
     private FullToSmallListener mListener;   //由大变小接口，记录播放位置，是否播放完毕
     private boolean isFirst = true;
     //动画要执行的平移值
-    private int deltaY;
+    private int deltaY = 0 ;
     private VideoAdSlot.AdSDKSlotListener mSlotListener;
     private Bundle mStartBundle;
     private Bundle mEndBundle; //用于Dialog出入场动画
@@ -102,7 +104,7 @@ public class VideoFullDialog extends Dialog implements CustomVideoView.ADVideoPl
                 onClickVideo();
             }
         });
-        mRootView.setVisibility(View.INVISIBLE);
+        //mRootView.setVisibility(View.INVISIBLE);
 
         mVideoView.setListener(this);
         mVideoView.mute(false);
@@ -112,7 +114,7 @@ public class VideoFullDialog extends Dialog implements CustomVideoView.ADVideoPl
             public boolean onPreDraw() {
                 mParentView.getViewTreeObserver().removeOnPreDrawListener(this);
                 prepareScene();
-             //   runEnterAnimation();
+                runEnterAnimation();
                 return true;
             }
         });
@@ -145,7 +147,7 @@ public class VideoFullDialog extends Dialog implements CustomVideoView.ADVideoPl
     @Override
     public void onBackPressed() {
         onClickBackBtn();
-        //super.onBackPressed(); 禁止掉返回键本身的关闭功能,转为自己的关闭效果
+       // super.onBackPressed(); //禁止掉返回键本身的关闭功能,转为自己的关闭效果
     }
 
     @Override
@@ -184,7 +186,7 @@ public class VideoFullDialog extends Dialog implements CustomVideoView.ADVideoPl
 
     @Override
     public void onClickBackBtn() {
-       // runExitAnimator();
+          runExitAnimator();
     }
 
     //准备动画所需数据
@@ -198,12 +200,13 @@ public class VideoFullDialog extends Dialog implements CustomVideoView.ADVideoPl
         mVideoView.setTranslationY(deltaY);
     }
 
-   /* //准备入场动画
+    //准备入场动画
+    @SuppressLint("NewApi")
     private void runEnterAnimation() {
         mVideoView.animate()
                 .setDuration(200)
                 .setInterpolator(new LinearInterpolator())
-                .translationY(0)
+                .translationY(deltaY)
                 .withStartAction(new Runnable() {
                     @Override
                     public void run() {
@@ -211,9 +214,10 @@ public class VideoFullDialog extends Dialog implements CustomVideoView.ADVideoPl
                     }
                 })
                 .start();
-    }*/
+    }
 
-    /*//准备出场动画
+    //准备出场动画
+    @SuppressLint("NewApi")
     private void runExitAnimator() {
         mVideoView.animate()
                 .setDuration(200)
@@ -234,7 +238,7 @@ public class VideoFullDialog extends Dialog implements CustomVideoView.ADVideoPl
                         }
                     }
                 }).start();
-    }*/
+    }
 
     @Override
     public void onAdVideoLoadSuccess() {

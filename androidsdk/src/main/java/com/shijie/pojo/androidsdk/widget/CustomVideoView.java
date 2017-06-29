@@ -193,7 +193,6 @@ public class CustomVideoView extends RelativeLayout implements
 
     /**
      * true is no voice
-     *
      * @param mute
      */
     public void mute(boolean mute) {

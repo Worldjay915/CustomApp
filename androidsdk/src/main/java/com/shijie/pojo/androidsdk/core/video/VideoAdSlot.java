@@ -12,6 +12,7 @@ import com.shijie.pojo.androidsdk.constant.SDKConstant;
 import com.shijie.pojo.androidsdk.core.AdParameters;
 import com.shijie.pojo.androidsdk.module.AdValue;
 import com.shijie.pojo.androidsdk.report.ReportManager;
+import com.shijie.pojo.androidsdk.utils.L;
 import com.shijie.pojo.androidsdk.utils.Utils;
 import com.shijie.pojo.androidsdk.widget.CustomVideoView;
 import com.shijie.pojo.androidsdk.widget.VideoFullDialog;
@@ -176,6 +177,7 @@ public class VideoAdSlot implements CustomVideoView.ADVideoPlayerListener{
         mParentView.removeView(mVideoView);
         VideoFullDialog dialog = new VideoFullDialog(mContext, mVideoView, mXAdInstance,
                 mVideoView.getCurrentPosition());
+        L.i("VideoFullDialog-----开始执行");
         dialog.setListener(new VideoFullDialog.FullToSmallListener() {
             @Override
             public void getCurrentPlayPosition(int position) {
@@ -322,8 +324,8 @@ public class VideoAdSlot implements CustomVideoView.ADVideoPlayerListener{
         public void onAdVideoLoadSuccess();
 
         public void onAdVideoLoadFailed();
-
         public void onAdVideoLoadComplete();
+
 
         public void onClickVideo(String url);
     }

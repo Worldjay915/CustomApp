@@ -88,7 +88,7 @@ public class SmartFragment extends BaseFragment implements View.OnClickListener 
                 connector.setHandler(new DefaultHandel(mContext));
                 // 这里是异步操作 连接后立即返回
                 ConnectFuture future = connector.connect(new InetSocketAddress(
-                        HttpConstants.MINA_IP, 4444));
+                        HttpConstants.MINA_IP2, 4444));
                 future.awaitUninterruptibly();// 等待连接创建完成
                 session = future.getSession();
             }
