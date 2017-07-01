@@ -1,0 +1,111 @@
+@CHARSET "UTF-8";
+/**页面的基本宽度和背景颜色*/
+html, body {
+	height: 100%;
+}
+body {
+	background-color: #ebebeb;
+}
+
+/**页面主容器 */
+.container {
+	height: 100%;
+	overflow: hidden;
+}
+
+/**闪屏页的 CSS*/
+.logo {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    color: #fff;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    margin-left: -100px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    font-size: 40px;
+}
+
+.splash-show {
+    position: absolute;
+    left: 0;
+    bottom: 15%;
+    width: 100%;
+    color: #fff;
+}
+
+.summary {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tech {
+    width: 60%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.site {
+    width: 55%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: left;
+    float: right;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/*
+tabbar内容部分
+.weui_tab_bd{
+	background-color: #ebebeb;
+}
+*/
+
+/*
+.weui_tabbar_item{
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);    
+filter: grayscale(100%);
+filter: gray;
+}
+
+.weui_tabbar_item:active{
+-webkit-filter: grayscale(0%);
+-moz-filter: grayscale(0%);
+-ms-filter: grayscale(0%);
+-o-filter: grayscale(0%);    
+filter: grayscale(0%);
+filter: none;
+}
+
+.weui_bar_item_on{
+-webkit-filter: grayscale(0%);
+-moz-filter: grayscale(0%);
+-ms-filter: grayscale(0%);
+-o-filter: grayscale(0%);    
+filter: grayscale(0%);
+filter: none;
+}
+
+.weui_tabbar_label{
+	color: #09BB07;
+}
+*/
+
+/**grid 的背景 */
+.weui_grid{
+	background-color: rgba(255,255,255,1);
+}
+/***/
+.weui_navbar_item:active {
+  background-color: #c0d0d1;
+}

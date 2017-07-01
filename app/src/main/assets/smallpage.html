@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+		<title></title>
+		<link rel="stylesheet" href="css/weui.min.css">
+		<link rel="stylesheet" href="css/swiper.min.css">
+		<link rel="stylesheet" href="css/my.css">
+		<style type="text/css">
+		
+			.audio_btn {
+				height: 30px;
+				width: 30px;
+				position: absolute;
+				right: 20px;
+				top: 20px;
+				z-index: 99;
+			    background-image:url(imgs/normalmusic.svg);
+			    background-size: contain;
+			}
+			
+			.arrow-up {
+				height: auto;
+				width: 16px;
+				position: absolute;
+				left: 50%;
+				bottom: 6%;
+				margin-left: -8px;
+				z-index: 99;
+			}
+			
+			.swiper-container {
+				width: 100%;
+				height: 100%
+			}
+			
+			.page {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				text-align: center;
+				background-color: #D74B28;
+				color: #ffffff;
+			}
+			
+			.page2 {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				text-align: center;
+				background-color: #D74B28;
+				color: #ffffff;
+				background-color: #02C1ED;
+			}
+			
+			.page3 {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				text-align: center;
+				background-color: #D74B28;
+				color: #ffffff;
+				background-color: #67C962;
+			}
+			
+			.page4 {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				text-align: center;
+				background-color: #D74B28;
+				color: #ffffff;
+				background-color: #FCD208;
+			}
+			
+			.btn_login {
+				position: absolute;
+				left: 50%;
+				margin-left: -20%;
+				bottom: 23%;
+				width: 40%;
+				text-align: center;
+			}
+			/**动画*/
+			
+			@-webkit-keyframes rotate {
+				from {
+					-webkit-transform: rotate(0deg);
+					transform: rotate(0deg);
+				}
+				to {
+					-webkit-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+			
+			@keyframes rotate {
+				from {
+					-webkit-transform: rotate(0deg);
+					transform: rotate(0deg);
+				}
+				to {
+					-webkit-transform: rotate(360deg);
+					transform: rotate(360deg);
+				}
+			}
+			
+			.rotate {
+				-webkit-animation: rotate 1.5s linear infinite;
+				animation: rotate 1.5s linear infinite;
+			}
+			
+			@-webkit-keyframes moveIconUp {
+				0% {
+					-webkit-transform: translateY(100%);
+					opacity: 0;
+				}
+				50% {
+					-webkit-transform: translateY(0%);
+					opacity: 1;
+				}
+				100% {
+					-webkit-transform: translateY(-100%);
+					opacity: 0;
+				}
+			}
+			
+			@keyframes moveIconUp {
+				0% {
+					-webkit-transform: translateY(100%);
+					transform: translateY(100%);
+					opacity: 0;
+				}
+				50% {
+					-webkit-transform: translateY(0%);
+					transform: translateY(0%);
+					opacity: 1;
+				}
+				100% {
+					-webkit-transform: translateY(-100%);
+					transform: translateY(-100%);
+					opacity: 0;
+				}
+			}
+			
+			@-webkit-keyframes moveToBottom {
+				from {}
+				to {
+					-webkit-transform: translateY(100%);
+					transform: translateY(100%);
+				}
+			}
+			
+			@keyframes moveToBottom {
+				from {}
+				to {
+					-webkit-transform: translateY(100%);
+					transform: translateY(100%);
+				}
+			}
+			
+			.moveIconUp {
+				-webkit-animation: moveIconUp ease 1.5s both infinite;
+				animation: moveToBottom ease 1.5s both infinite;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="audio_btn" class="audio_btn rotate" style="display: block;">
+			<audio loop="loop" src="media/cat.mp3" id="media" autoplay="autoplay"></audio>
+		</div>
+		<img src="imgs/icon_up.png" alt="" class="arrow-up moveIconUp" />
+
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="page">
+						<div class="logo">CA</div>
+						<div class="splash-show">
+							<h2 class="summary ">组件化开发</h2>
+							<div class="tech">首页面信息展示</div>
+							<div class="site">Copyright@ Zsj </div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="page2">
+						<div class="logo">CA</div>
+						<div class="splash-show">
+							<h2 class="summary ">原生+Hybird混合开发</h2>
+							<div class="tech">智能机器人聊天</div>
+							<div class="site">Copyright@ Zsj</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="page3">
+						<div class="logo">CA</div>
+						<div class="splash-show">
+							<h2 class="summary ">视频SDK封装</h2>
+							<div class="tech">个人页面设置</div>
+							<div class="site">Copyright@ Zsj</div>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="page4">
+						<div class="logo">CA</div>
+						<div class="splash-show">
+							<div class="btn_login">
+								<a href="#" class="weui_btn weui_btn_plain_primary"> 返回 </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+
+		<script src="js/zepto.min.js"></script>
+		<script src="js/swiper.jquery.min.js"></script>
+		<script>
+			$(function() {
+				/**背景音乐控制*/
+				//必须在微信Weixin JSAPI的WeixinJSBridgeReady才能生效 
+				document.addEventListener("WeixinJSBridgeReady", function() {
+					document.getElementById('media').play();
+				}, false);
+
+				$('#audio_btn').on('click', function() {
+					var media = document.getElementById('media');
+					if(media.paused) {
+						media.play();
+						$(this).addClass('rotate');
+					} else {
+						media.pause();
+						$(this).removeClass('rotate');
+					}
+				});
+
+				/**滑屏翻页*/
+				//微信上swipe*事件需要禁用touchmove
+				/*document.addEventListener('touchmove', function (event) {
+				   event.preventDefault();
+				}, false);
+				*/
+				var swiper = new Swiper('.swiper-container', {
+					pagination: '.swiper-pagination',
+					direction: 'vertical',
+					mousewheelControl: true,
+					loop: true
+				});
+			});
+		</script>
+	</body>
+
+</html>

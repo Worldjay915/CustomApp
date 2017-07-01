@@ -20,6 +20,9 @@ import com.shijie.pojo.customapp.R;
 import com.shijie.pojo.customapp.activity.LoginActivity;
 import com.shijie.pojo.customapp.activity.SettingActivity;
 import com.shijie.pojo.customapp.constant.Constant;
+import com.shijie.pojo.customapp.hybird.AboutActivity;
+import com.shijie.pojo.customapp.hybird.H5VideoActivity;
+import com.shijie.pojo.customapp.hybird.ShoppingActivity;
 import com.shijie.pojo.customapp.manager.UserManager;
 import com.shijie.pojo.customapp.module.update.UpdateModel;
 import com.shijie.pojo.customapp.network.http.RequestCenter;
@@ -58,7 +61,9 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     private TextView mShareView;
     private TextView mQrCodeView;
     private TextView mUpdateView;
-
+    private TextView mShoppingView;
+    private TextView mVideoView;
+    private TextView mAboutView;
     //自定义了一个广播接收器
     private LoginBroadcastReceiver receiver =
             new LoginBroadcastReceiver();
@@ -97,12 +102,22 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         mShareView.setOnClickListener(this);
         mQrCodeView = (TextView) mContentView.findViewById(R.id.my_qrcode_view);
         mQrCodeView.setOnClickListener(this);
+
         mLoginInfoView = (TextView) mContentView.findViewById(R.id.login_info_view);
         mUserNameView = (TextView) mContentView.findViewById(R.id.username_view);
         mTickView = (TextView) mContentView.findViewById(R.id.tick_view);
 
         mUpdateView = (TextView) mContentView.findViewById(R.id.update_view);
         mUpdateView.setOnClickListener(this);
+
+        mShoppingView = (TextView) mContentView.findViewById(R.id.shopping_view);
+        mShoppingView.setOnClickListener(this);
+
+        mVideoView = (TextView) mContentView.findViewById(R.id.video_view);
+        mVideoView.setOnClickListener(this);
+
+        mAboutView = (TextView) mContentView.findViewById(R.id.about_view);
+        mAboutView.setOnClickListener(this);
     }
 
     @Override
@@ -159,6 +174,15 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
                     requestPermission(Constant.WRITE_READ_EXTERNAL_CODE, Constant.WRITE_READ_EXTERNAL_PERMISSION);
                 }
                 break;
+            case  R.id.shopping_view:
+                startActivity(new Intent(mContext, ShoppingActivity.class));
+                break;
+            case  R.id.video_view:
+                startActivity(new Intent(mContext, H5VideoActivity.class));
+                break;
+            case  R.id.about_view:
+                startActivity(new Intent(mContext, AboutActivity.class));
+                break;
         }
     }
 
@@ -181,11 +205,11 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     private void shareFriend() {
         ShareDialog dialog = new ShareDialog(mContext, false);
         dialog.setShareType(Platform.SHARE_IMAGE);
-        dialog.setShareTitle("慕课网");
-        dialog.setShareTitleUrl("http://www.imooc.com");
-        dialog.setShareText("慕课网");
+        dialog.setShareTitle("百度");
+        dialog.setShareTitleUrl("http://www.baidu.com");
+        dialog.setShareText("百度");
         dialog.setShareSite("imooc");
-        dialog.setShareSiteUrl("http://www.imooc.com");
+        dialog.setShareSiteUrl("http://www.baidu.com");
         dialog.setImagePhoto(Environment.getExternalStorageDirectory() + "/test2.jpg");
         dialog.show();
     }

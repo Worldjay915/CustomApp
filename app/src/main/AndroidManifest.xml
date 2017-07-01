@@ -81,6 +81,12 @@
 
         <activity android:name=".activity.MessageActivity"></activity>
 
+        <activity android:name=".hybird.ShoppingActivity"></activity>
+
+        <activity android:name=".hybird.H5VideoActivity"></activity>
+
+        <activity android:name=".hybird.AboutActivity"></activity>
+
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
